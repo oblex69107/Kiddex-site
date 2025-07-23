@@ -1,0 +1,134 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  padding: 10px;
+}
+
+header {
+  background-color: #222;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+nav{
+    margin-top: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #facc15;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px 10px;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+.hero h2{
+    font-size: 2rem;
+}
+.hero p{
+    font-size: 1rem;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #facc15;
+  border: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.featured {
+  padding: 40px 20px;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.card {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  color: #aaa;
+}
+@media (min-width: 600px) {
+  .card-container {
+    flex-direction: row;
+  }
+}
+.contact {
+  padding: 40px 20px;
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+}
+
+.contact h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #facc15;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#formStatus {
+  margin-top: 20px;
+  text-align: center;
+  color: #facc15;
+}
+.thumb {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
