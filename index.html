@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coding with Kiddex</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Coding with Kiddex</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="https://youtube.com/@kiddexcodes?si=x9G0T_aTxSk7h92r" target="_blank">Tutorials</a>
+      <a href="challenges.html">Challenges</a>
+      <a href="#contactForm">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Kiddex</h2>
+    <p>Learn Python, solve challenges, and build real-world apps!</p>
+    <button onclick="watchTutorials()">Watch Tutorials</button>
+    <a href="challenges.html"><button>Try a Challenge</button></a>
+  </section>
+
+  <section class="featured">
+    <h3>Featured Challenges</h3>
+    <div class="card-container">
+        <div class="card">
+  <img src="images/fizzbuzz.png" alt="FizzBuzz Thumbnail" class="thumb" />
+  <h4>FizzBuzz</h4>
+  <p>Loop through numbers and print Fizz, Buzz, or FizzBuzz.</p>
+  <button onclick="alert('Coming soon: FizzBuzz tutorial!')">View Challenge</button>
+</div>
+
+<div class="card">
+  <img src="images/prime checker.png" alt="Prime Checker Thumbnail" class="thumb" />
+  <h4>Prime Checker</h4>
+  <p>Check if a number is prime using loops and logic.</p>
+  <button onclick="alert('Coming soon: Prime Checker tutorial!')">View Challenge</button>
+</div>
+
+<div class="card">
+  <img src="images/palindrome.png" alt="Palindrome Thumbnail" class="thumb" />
+  <h4>Palindrome Test</h4>
+  <p>Detect if a word or number reads the same backward.</p>
+  <button onclick="alert('Coming soon: Palindrome tutorial!')">View Challenge</button>
+</div>
+  </section>
+
+  <footer>
+    <section class="contact">
+  <h3>Contact Me</h3>
+  <form id="contactForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required />
+
+    <label for="message">Message:</label>
+    <textarea id="message" rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="formStatus"></p>
+</section>
+    <p>© 2025 Coding with Kiddex. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
