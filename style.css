@@ -132,3 +132,21 @@ button[type="submit"] {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+.challenge-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.challenge-card {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.challenge-card:hover {
+  background-color: #333;
+}
