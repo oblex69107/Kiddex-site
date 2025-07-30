@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FizzBuzz Challenge | Kiddex</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .editor-container { max-width: 700px; margin: 2rem auto; background: #f9f9f9; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 8px #ccc; color: #222; }
+    textarea { width: 100%; height: 180px; font-family: monospace; font-size: 1rem; margin-bottom: 1rem; color: #222; background: #fff; border: 1px solid #ccc; }
+    .output { background: #fff; border: 1px solid #ddd; padding: 1rem; min-height: 60px; margin-top: 1rem; border-radius: 6px; color: #222; }
+    .tutorial, .code-editor { margin-bottom: 2rem; color: #222; }
+    button { background: #4caf50; color: #fff; border: none; padding: 0.7rem 1.5rem; border-radius: 5px; cursor: pointer; font-size: 1rem; }
+    button:hover { background: #388e3c; }
+  </style>
+</head>
+<body>
+  <header>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.24.0/full/pyodide.js"></script>
+    <h1>FizzBuzz Challenge</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="challenges.html">Challenges</a>
+    </nav>
+  </header>
+
+  <div class="editor-container">
+    <div class="tutorial">
+        <section class="tutorial">
+          <h2>FizzBuzz Tutorial</h2>
+          <p><strong>FizzBuzz</strong> is a classic programming challenge often used in interviews and beginner lessons. The goal is to print numbers from 1 to 100, but:</p>
+          <ul>
+            <li>For multiples of <strong>3</strong>, print <strong>Fizz</strong> instead of the number.</li>
+            <li>For multiples of <strong>5</strong>, print <strong>Buzz</strong> instead of the number.</li>
+            <li>For multiples of <strong>both 3 and 5</strong>, print <strong>FizzBuzz</strong>.</li>
+            <li>Otherwise, print the number itself.</li>
+          </ul>
+          <p>Example output:</p>
+          <pre style="background:#eee;padding:1em;border-radius:6px;">
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+...
+</pre>
+          <p>Ready to try it yourself? Use the code editor below!</p>
+        </section>
+        <section class="code-editor">
+          <h2>Your FizzBuzz Code (Python)</h2>
+    <textarea id="code" spellcheck="false">for i in range(1, 101):
+    # Your code here
+</textarea>
+    <button id="runBtn">Run Code</button>
+    <div class="output" id="output"></div>
+        </section>
+  </div>
+
+  <script>
+    async function main() {
+      let pyodide = await loadPyodide();
+      document.getElementById('runBtn').addEventListener('click', async function() {
+        const code = document.getElementById('code').value;
+        const outputDiv = document.getElementById('output');
+        outputDiv.innerHTML = '<em>Running...</em>';
+        try {
+          let result = await pyodide.runPythonAsync(`import sys\nfrom io import StringIO\noutput = StringIO()\nsys.stdout = output\n${code}\nsys.stdout = sys.__stdout__\noutput.getvalue()`);
+          outputDiv.innerHTML = '<pre>' + result + '</pre>';
+        } catch (e) {
+          outputDiv.innerHTML = '<span style="color:red">Error: ' + e.message + '</span>';
+        }
+      });
+    }
+    main();
+  </script>
+</body>
+</html>
